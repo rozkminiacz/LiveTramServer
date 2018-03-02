@@ -12,16 +12,8 @@ import java.util.concurrent.TimeUnit
 class Client(networkModule: NetworkModule = NetworkModule(), private val tramDataConverter: TramDataConverter = TramDataConverter()) : Closeable {
 
     private val service = networkModule.provideNetworkService()
-    private val tramSubject = PublishSubject.create<List<MinifiedTramData>>()
-    private val stopsSubject = PublishSubject.create<List<StopData>>()
 
     private val repository = Repository()
-
-    private var stops: List<StopData> = listOf()
-        set(value) {
-            field = value
-            stopsSubject.onNext(value)
-        }
 
     override fun close() {
         compositeDisposable.clear()
@@ -36,8 +28,8 @@ class Client(networkModule: NetworkModule = NetworkModule(), private val tramDat
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .map { it.stops }
-                .doOnNext { this.stops = stops }
                 .doOnNext { println("stops: ${it.size}") }
+                .flatMap { repository.updateStops(it) }
                 .doOnError { println(it.message) }
                 .subscribe())
 
@@ -46,7 +38,6 @@ class Client(networkModule: NetworkModule = NetworkModule(), private val tramDat
                 .map { it.vehicles.filter { !it.isDeleted }.map { tramDataConverter.convert(it) } }
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
-                .doOnNext { tramSubject.onNext(it) }
                 .doOnNext { }
                 .doOnNext { println("vehicles: ${it.size}") }
                 .flatMap { repository.update(it) }
@@ -56,7 +47,7 @@ class Client(networkModule: NetworkModule = NetworkModule(), private val tramDat
     }
 
     fun provideLatestData() = repository.retrieve().cache()
-    fun provideStops() = stopsSubject.toFlowable(BackpressureStrategy.BUFFER).firstElement().cache()
+    fun provideStops() = repository.retrieveStops().cache()
 }
 
 data class MinifiedTramData(val id: String, val lat: Double, val lon: Double, val name: String, val angle: Float)

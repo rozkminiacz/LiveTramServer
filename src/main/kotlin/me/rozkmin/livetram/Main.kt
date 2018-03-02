@@ -35,7 +35,7 @@ fun Application.main() {
             }
 
             get("/stops") {
-                call.respondText(client.provideStops().blockingGet(emptyList()).toJson(), ContentType.Application.Json)
+                call.respondText(client.provideStops().blockingGet().toJson(), ContentType.Application.Json)
             }
         }
     }.start(wait = true)
