@@ -21,8 +21,7 @@ fun Application.main() {
     val client = Client(NetworkModule())
     client.start()
 
-    embeddedServer<NettyApplicationEngine, NettyApplicationEngine.Configuration>(Netty) {
-
+    embeddedServer<NettyApplicationEngine, NettyApplicationEngine.Configuration>(Netty, port = System.getenv("PORT").toInt()) {
         install(DefaultHeaders)
         install(Compression)
         install(CallLogging)
