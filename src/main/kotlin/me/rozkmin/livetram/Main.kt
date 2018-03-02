@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     val client = Client(NetworkModule())
     client.start()
 
-    embeddedServer<NettyApplicationEngine, NettyApplicationEngine.Configuration>(Netty, 8080) {
+    embeddedServer<NettyApplicationEngine, NettyApplicationEngine.Configuration>(Netty, 80) {
 
         install(DefaultHeaders)
         install(Compression)
