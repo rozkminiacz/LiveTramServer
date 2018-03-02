@@ -80,7 +80,11 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.3'
 }
 
-// Heroku relies on the 'stage' task to deploy.
-task stage {
-    dependsOn shadowJar
+task stage(type: Copy, dependsOn: [clean, build]) {
+    from jar.archivePath
+    into 'build/stage/'
+    rename {
+        'app.jar'
+    }
 }
+stage.mustRunAfter(clean)
