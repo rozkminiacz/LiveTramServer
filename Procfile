@@ -1,1 +1,1 @@
-web: java -jar build/stage/app.jar
+web java -Dserver.port=$PORT $JAVA_OPTS build/stage/app.jar
