@@ -34,7 +34,6 @@ class Client(networkModule: NetworkModule = NetworkModule(), val tramDataConvert
                 .map { it.vehicles.filter { !it.isDeleted }.map { tramDataConverter.convert(it) } }
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
-                .doOnNext { println(it) }
                 .doOnNext { tramSubject.onNext(it) }
                 .subscribe()
     }
