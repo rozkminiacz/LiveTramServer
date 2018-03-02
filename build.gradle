@@ -30,7 +30,8 @@ mainClassName = 'io.ktor.server.netty.DevelopmentEngine'
 sourceCompatibility = 1.8
 
 sourceSets {
-    main.kotlin.srcDirs = [ 'src/main/kotlin' ]
+    main.kotlin.srcDirs += 'src/kotlin'
+    main.resources.srcDirs += 'src/resources'
 }
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
@@ -84,7 +85,7 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.3'
+    gradleVersion = '4.1'
 }
 
 task stage(type: Copy, dependsOn: [clean, build]) {

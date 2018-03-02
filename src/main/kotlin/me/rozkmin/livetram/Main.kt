@@ -1,6 +1,7 @@
 package me.rozkmin.livetram
 
 import com.google.gson.Gson
+import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.features.CallLogging
@@ -15,13 +16,12 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.netty.NettyApplicationEngine
 
-
-fun main(args: Array<String>) {
+fun Application.main() {
 
     val client = Client(NetworkModule())
     client.start()
 
-    embeddedServer<NettyApplicationEngine, NettyApplicationEngine.Configuration>(Netty, 8080) {
+    embeddedServer<NettyApplicationEngine, NettyApplicationEngine.Configuration>(Netty) {
 
         install(DefaultHeaders)
         install(Compression)
@@ -43,4 +43,6 @@ fun main(args: Array<String>) {
 }
 
 fun Any.toJson() = Gson().toJson(this)
+
+
 

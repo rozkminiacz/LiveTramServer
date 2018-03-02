@@ -5,7 +5,7 @@
       <configuration version="3" platform="JVM 1.8" useProjectSettings="false">
         <compilerSettings />
         <compilerArguments>
-          <option name="destination" value="$MODULE_DIR$/../../build/kotlin-classes/main" />
+          <option name="destination" value="$MODULE_DIR$/../../build/classes/kotlin/main" />
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
           <option name="moduleName" value="livetram-caching-server" />
@@ -28,50 +28,56 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/kotlin">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/kotlin" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
     </content>
+    <content url="file://$MODULE_DIR$/../../src/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/resources" type="java-resource" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.2.21" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-netty:0.9.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.1.3" level="project" />
     <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxkotlin:2.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.3.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:adapter-rxjava2:2.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: ru.gildor.coroutines:kotlin-coroutines-retrofit:0.9.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.9.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.21" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.9.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.21" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-server-host-common:0.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-server-core:0.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-http:0.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-utils:0.9.1" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.2.21" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.21" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:0.22.1" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-io:0.22.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.21" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe:config:1.3.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.ktor:ktor-server-host-common:0.9.1" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http2:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.alpn:alpn-api:1.1.3.v20160715" level="project" />
     <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-io-jvm:0.0.8" level="project" />
-    <orderEntry type="library" name="Gradle: io.ktor:ktor-server-core:0.9.1" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.19.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.ktor:ktor-utils:0.9.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.ktor:ktor-http:0.9.1" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.19.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.19.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.19.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.19.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.13.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.1" level="project" />
   </component>
 </module>
