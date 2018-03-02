@@ -15,6 +15,7 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.netty.NettyApplicationEngine
 
+
 fun main(args: Array<String>) {
 
     val client = Client(NetworkModule())
@@ -42,3 +43,4 @@ fun main(args: Array<String>) {
 }
 
 fun Any.toJson() = Gson().toJson(this)
+
