@@ -26,7 +26,7 @@ class Client(networkModule: NetworkModule = NetworkModule(), val tramDataConvert
                 .observeOn(Schedulers.io())
                 .map { it.stops }
                 .doOnNext { this.stops = stops }
-                .doOnNext { println(it) }
+                .doOnNext { println("stops: ${it.size}") }
                 .subscribe()
 
         Flowable.interval(0, 1500, TimeUnit.MILLISECONDS)
