@@ -25,7 +25,7 @@ apply from :'dependencies.gradle'
 
 
 
-mainClassName = 'me.rozkmin.livetram.MainKt'
+mainClassName = 'io.ktor.server.netty.DevelopmentEngine'
 
 sourceCompatibility = 1.8
 
