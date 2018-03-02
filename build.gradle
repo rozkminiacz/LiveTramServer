@@ -7,16 +7,23 @@ buildscript {
 
     repositories {
         mavenCentral()
+        maven{
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.2"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
 apply plugin: 'application'
+apply plugin: "com.github.johnrengelman.shadow"
 apply from :'dependencies.gradle'
+
+
 
 mainClassName = 'me.rozkmin.livetram.MainKt'
 
@@ -54,4 +61,26 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-task stage(dependsOn: ['run'])
+// Redeploy watcher.
+run {
+    args = ['run',
+            "--launcher-class=$mainClassName",
+            "--redeploy=src/**/*.*",
+            "--on-redeploy=./gradlew classes"
+    ]
+}
+
+// Naming and packaging settings for the "shadow jar".
+shadowJar {
+    baseName = 'app'
+    classifier = 'shadow'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.3'
+}
+
+// Heroku relies on the 'stage' task to deploy.
+task stage {
+    dependsOn shadowJar
+}
