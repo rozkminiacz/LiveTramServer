@@ -12,15 +12,14 @@ ext {
     ]
 
     rxJavaDependencies = [
-            rxJava   : "io.reactivex.rxjava2:rxjava:${RxJavaVersion}",
-            rxKotlin : "io.reactivex.rxjava2:rxkotlin:${RxKotlinVersion}"
+            rxJava  : "io.reactivex.rxjava2:rxjava:${RxJavaVersion}",
+            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${RxKotlinVersion}"
     ]
 
     retrofitDependencies = [
             retrofit             : "com.squareup.retrofit2:retrofit:${RetrofitVersion}",
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${RetrofitVersion}",
             retrofitRxJavaAdapter: "com.squareup.retrofit2:adapter-rxjava2:${RetrofitVersion}",
-            couroutinesAdapter   : "ru.gildor.coroutines:kotlin-coroutines-retrofit:0.9.0",
             okHttp3              : "com.squareup.okhttp3:okhttp:${OkHttpVersion}",
             okHttp3Logging       : "com.squareup.okhttp3:logging-interceptor:${OkHttpVersion}"
     ]
@@ -29,5 +28,9 @@ ext {
             daggerKapt    : "com.google.dagger:dagger-compiler:${DaggerVersion}",
             daggerCompile : "com.google.dagger:dagger:${DaggerVersion}",
             daggerProvided: "org.glassfish:javax.annotation:10.0-b28"
+    ]
+
+    database = [
+            mapDB: "org.mapdb:mapdb:3.0.5"
     ]
 }

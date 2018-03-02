@@ -31,7 +31,7 @@ fun Application.main() {
                 call.respondText(mapOf("Status" to "OK").toJson(), ContentType.Application.Json)
             }
             get("/trams") {
-                call.respondText(client.provideLatestData().blockingGet(emptyList()).toJson(), ContentType.Application.Json)
+                call.respondText(client.provideLatestData().blockingGet().toJson(), ContentType.Application.Json)
             }
 
             get("/stops") {

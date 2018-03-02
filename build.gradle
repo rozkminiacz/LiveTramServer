@@ -59,6 +59,8 @@ dependencies {
     compile rxJavaDependencies.values()
     compile retrofitDependencies.values()
 
+    compile database.values()
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
